@@ -42,6 +42,18 @@ export const Title = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  position: relative;
+
+  &::after {
+    content: '-';
+    display: block;
+    background-image: url("/images/asset-header.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 12px;
+    right: -18px;
+  }
 `
 
 export const Description = styled.p`
