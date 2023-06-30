@@ -15,10 +15,11 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const colors = {
-  primary: "#506270",
+  primary: "#1C3C50",
   blue100: "#F0F8FF",
   blue500: "#2C83FB",
   blue800: "#1F76F0",
+  white: "#FFFFFF",
   gray: "#83979E",
   hr: "#C8D4DD",
 }
