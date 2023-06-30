@@ -6,6 +6,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
   body {
     font-family: 'PlusJakartaSans', sans-serif;
@@ -14,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
+
 export const colors = {
   primary: "#1C3C50",
   blue100: "#F0F8FF",
@@ -21,5 +26,6 @@ export const colors = {
   blue800: "#1F76F0",
   white: "#FFFFFF",
   gray: "#83979E",
+  gray50: "#F7F8FB",
   hr: "#C8D4DD",
 }
