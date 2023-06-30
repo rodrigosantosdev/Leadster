@@ -1,6 +1,7 @@
 import React from 'react'
-import { Webinar, Subtitle, Tag, Title, Divisor, Description, WebinarWrapper } from "./style"
+import { Webinar, Subtitle, Tag, Title, Description, WebinarWrapper } from "./style"
 import { ContainerGrid } from "../Container/style"
+import { Divisor } from "../Divisor"
 
 export const Hero = () => {
   return (

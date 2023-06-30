@@ -44,12 +44,6 @@ export const Title = styled.h1`
   -webkit-text-fill-color: transparent;
 `
 
-export const Divisor = styled.hr`
-  border: 0;
-  height: 1px;
-  background: ${colors.hr};
-`
-
 export const Description = styled.p`
   color: ${colors.primary};
   font-weight: 600;
