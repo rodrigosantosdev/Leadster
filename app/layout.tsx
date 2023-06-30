@@ -42,8 +42,8 @@ const PlusJakartaSans = localFont({
 })
 
 export const metadata = {
-  title: 'Teste Front Leadsetp',
-  description: 'LeadStep',
+  title: 'Teste Front Leadster',
+  description: 'Leadster',
 }
 
 export default function RootLayout({
