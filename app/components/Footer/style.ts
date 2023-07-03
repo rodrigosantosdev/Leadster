@@ -13,7 +13,7 @@ export const Content = styled.div`
 `
 
 export const Slogan = styled.p`
-  font-size: 14px;
+  font-size: 16px;
   padding-top: 8px;
   margin-bottom: 2rem;
   color: ${colors.gray};
