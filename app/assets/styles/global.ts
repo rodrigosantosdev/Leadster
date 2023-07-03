@@ -6,15 +6,17 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
+  
   body {
     font-family: 'PlusJakartaSans', sans-serif;
     font-weight: 400;
     font-size: 1rem;
+    overflow-x: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `
 
