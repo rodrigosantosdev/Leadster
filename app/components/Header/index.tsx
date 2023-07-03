@@ -5,7 +5,7 @@ import { Logo } from "../Logo"
 export const Header = () => {
   return (
     <THeader>
-      <Logo />
+      <Logo width={205} height={47} />
     </THeader>
   )
 }
