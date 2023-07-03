@@ -1,11 +1,43 @@
-import React from 'react'
-import Image from "next/image"
+import React, { useState } from 'react'
 import { ContainerGrid } from "../Container/style"
 import { Divisor } from "../Divisor"
 import { OptionItem } from "../OptionItem"
-import { CardItem, CardImage, CardDesk, ContainerVideo, OptionContent, StyleForm, StyledSpan, StyledSelect, OptionsContainer } from "./style"
+import { Pagination } from "../Pagination"
+import data from "../../Mock/data.json"
+import { CardItem, 
+  CardImage, 
+  CardDesk, 
+  ContainerVideo, 
+  OptionContent, 
+  StyleForm, 
+  StyledSpan, 
+  StyledSelect, 
+  OptionsContainer,
+} from "./style"
+
+interface Item {
+  image: string;
+  title: string;
+}
+
+interface Data {
+  items: Item[];
+}
 
 export const Videos = () => {
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 9; // Defina o número de itens por página
+    const jsonData: Data = data;
+  
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = jsonData.items.slice(indexOfFirstItem, indexOfLastItem);
+  
+    const paginate = (pageNumber: number) => {
+      setCurrentPage(pageNumber);
+    };
+
   return (
     <ContainerGrid>
       <OptionsContainer>
@@ -35,78 +67,25 @@ export const Videos = () => {
       </OptionsContainer>
       <Divisor />
       <ContainerVideo>
-        <CardItem>
-          <CardImage>
-            <Image src="/images/thumbnail.png" alt="capa" width={362} height={204} />
-          </CardImage>
-          <CardDesk>
-          Como aumentar sua Geração de Leads feat. Traktor
-          </CardDesk>
-        </CardItem>
-        <CardItem>
-          <CardImage>
-            <Image src="/images/thumbnail.png" alt="capa" width={362} height={204} />
-          </CardImage>
-          <CardDesk>
-          Como aumentar sua Geração de Leads feat. Traktor
-          </CardDesk>
-        </CardItem>
-        <CardItem>
-          <CardImage>
-            <Image src="/images/thumbnail.png" alt="capa" width={362} height={204} />
-          </CardImage>
-          <CardDesk>
-          Como aumentar sua Geração de Leads feat. Traktor
-          </CardDesk>
-        </CardItem>
-        <CardItem>
-          <CardImage>
-            <Image src="/images/thumbnail.png" alt="capa" width={362} height={204} />
-          </CardImage>
-          <CardDesk>
-          Como aumentar sua Geração de Leads feat. Traktor
-          </CardDesk>
-        </CardItem>
-        <CardItem>
-          <CardImage>
-            <Image src="/images/thumbnail.png" alt="capa" width={362} height={204} />
-          </CardImage>
-          <CardDesk>
-          Como aumentar sua Geração de Leads feat. Traktor
-          </CardDesk>
-        </CardItem>
-        <CardItem>
-          <CardImage>
-            <Image src="/images/thumbnail.png" alt="capa" width={362} height={204} />
-          </CardImage>
-          <CardDesk>
-          Como aumentar sua Geração de Leads feat. Traktor
-          </CardDesk>
-        </CardItem>
-        <CardItem>
-          <CardImage>
-            <Image src="/images/thumbnail.png" alt="capa" width={362} height={204} />
-          </CardImage>
-          <CardDesk>
-          Como aumentar sua Geração de Leads feat. Traktor
-          </CardDesk>
-        </CardItem>
-        <CardItem>
-          <CardImage>
-            <Image src="/images/thumbnail.png" alt="capa" width={362} height={204} />
-          </CardImage>
-          <CardDesk>
-          Como aumentar sua Geração de Leads feat. Traktor
-          </CardDesk>
-        </CardItem>
-        <CardItem>
-          <CardImage>
-            <Image src="/images/thumbnail.png" alt="capa" width={362} height={204} />
-          </CardImage>
-          <CardDesk>
-          Como aumentar sua Geração de Leads feat. Traktor
-          </CardDesk>
-        </CardItem>
+        {currentItems.map((item, index) => (
+          <CardItem key={index}>
+            <CardImage>
+              <img src={item.image} alt="capa" width={362} height={204} />
+            </CardImage>
+            <CardDesk>
+              {item.title}
+            </CardDesk>
+          </CardItem>
+        ))}
+        <br />
+        <Divisor />
+      
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={jsonData.items.length}
+          paginate={paginate}
+        />
+
       </ContainerVideo>
     </ContainerGrid>
   )

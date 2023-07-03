@@ -8,11 +8,34 @@ export const OptionsContainer = styled.section`
   align-items: center;
   margin-top: 90px;
   margin-bottom: 28px;
+
+  @media (max-width: 940px) {
+    align-items: flex-start;
+    gap: 2rem;
+    padding-left: 1rem;
+  }
+
+  @media (max-width: 940px) {
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const OptionContent = styled.div`
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 1080px) {
+    gap: 0.5rem;
+  }
+  @media (max-width: 940px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
 `
 
 export const StyleForm = styled.form`
@@ -21,9 +44,12 @@ export const StyleForm = styled.form`
   gap: 20px;
 `;
 
-
 export const StyledSpan = styled.span`
   font-weight: bold;
+
+  @media (max-width: 1080px) {
+    font-size: 16px;
+  }
 `;
 
 export const StyledSelect = styled.select`
@@ -38,33 +64,28 @@ export const StyledSelect = styled.select`
   border-radius: 10px;
   border: 1px solid ${colors.primary};
 
-  appearance: none;
-  padding: 10px;
-  width: 100%;
-  position: relative;
-  
-  &::after {
-    content: '▼';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
+  @media (max-width: 1080px) {
     font-size: 12px;
-    padding: 0 5px;
-    color: ${colors.primary}; /* Cor da seta */
+  }
+  @media (max-width: 940px) {
   }
 `;
-
 
 export const ContainerVideo = styled.section`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 1.5rem;
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
+
+  @media (max-width: 1080px) {
+    justify-content: space-around;
+  }
+
+  @media (max-width: 580px) {
+    justify-content: center;
+  }
 `;
 
 export const CardItem = styled.div`
