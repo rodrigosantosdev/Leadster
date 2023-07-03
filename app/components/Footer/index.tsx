@@ -20,7 +20,7 @@ export const Footer = () => {
     <FooterContainer>
       <ContainerGrid>
         <Content>
-          <Logo />
+          <Logo width={271} height={62} />
           <Slogan>Transformando visitantes em clientes.</Slogan>
 
           <MenuFooterContainer>
