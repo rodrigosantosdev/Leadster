@@ -28,12 +28,35 @@ export const MenuFooter = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  
+  @media (max-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+  @media (max-width: 580px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `
 export const MenuLinks = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+
+  @media (max-width: 1200px) {
+    padding-left: 2rem;
+
+  }
+
+  @media (max-width: 580px) {
+      padding-left: 2rem;
+      gap: 2rem;
+      text-align: center;
+  }
   
   ul {
     display: flex;
@@ -59,6 +82,10 @@ export const MenuSocial = styled.div`
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  
+  @media (max-width: 580px) {
+    justify-content: center;
+  }
 `
 
 export const IconWrapper = styled.div`
@@ -90,6 +117,19 @@ export const Copyright = styled.div`
   justify-content: space-between;
   max-width: 1140px;
   margin: 0 auto;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 580px) {
+    align-items: flex-start;
+    padding-left: 2rem;
+    
+    p + p {
+      margin-top: 1rem;
+    }
+  }
 
   p {
     font-size: 14px;
