@@ -19,4 +19,12 @@ export const OptionFilterWrapper = styled.button<OptionFilterWrapperProps>`
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+
+  @media (max-width: 1080px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 940px) {
+    padding: 10px 12px;
+  }
 `;
