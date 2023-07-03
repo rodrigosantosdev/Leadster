@@ -18,7 +18,13 @@ export const GeracaoLeads = () => {
     <LeadsPoints>
       <LeadsContent>
         <BeneficioGratisImage>
-          <Image src="/images/comparativo_img_CTA.png" width={740} height={687} alt="Geração de Leads" />
+          <Image 
+            src="/images/comparativo_img_CTA.png" 
+            width={740} 
+            height={687} 
+            alt="Geração de Leads"
+            layout="responsive" 
+          />
         </BeneficioGratisImage>
         <BeneficioGratisDesk>
           <h1>Pronto para triplicar sua</h1>

@@ -13,12 +13,33 @@ export const LeadsContent = styled.div`
   justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
-export const BeneficioGratisImage = styled.div``
+export const BeneficioGratisImage = styled.div`
+  width: 100%;
+  max-width: 480px;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 580px) {
+    padding: 0 1rem;
+  }
+`
 
 export const BeneficioGratisDesk = styled.div`
   width: 624px;
+
+  @media (max-width: 1200px) {
+    text-align: center;
+  }
 
   h1 {
     font-size: 40px;
@@ -46,6 +67,7 @@ export const BeneficioGratisDesk = styled.div`
 `
 
 export const Content = styled.div`
+  
   a {
     background-color: ${colors.blue500};
     text-transform: uppercase;
@@ -63,6 +85,10 @@ export const Demostracao = styled.div`
   margin-top: 24px; 
   transition: all 200ms ease-in;
 
+  @media (max-width: 580px) {
+    flex-direction: column;
+  }
+
   a {
     &:hover {
       background-color: ${colors.blue800};
@@ -73,8 +99,13 @@ export const Demostracao = styled.div`
 export const Box = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   margin-top: 18px;
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
 `
 
 export const Credito = styled.div`
@@ -84,6 +115,11 @@ export const Credito = styled.div`
   font-weight: 600;
   padding-right: 16px;
   border-right: 2px solid ${colors.primary};
+
+  @media (max-width: 580px) {
+    border-right: 0;
+    padding-right: 0;
+  }
 
   p {
     font-size: 15px;
@@ -101,6 +137,10 @@ export const Rating = styled.div`
   align-items: center;
   gap:8px;
   padding-left: 16px;
+
+  @media (max-width: 580px) {
+    padding-left:0;
+  }
 
   p {
     font-size: 15px;
