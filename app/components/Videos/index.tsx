@@ -36,11 +36,6 @@ interface Data {
   items: Item[];
 }
 
-interface ButtonProps {
-  bgColor: string;
-  color: string;
-}
-
 interface ModalProps {
   title: string;
   description: string;
@@ -49,7 +44,7 @@ interface ModalProps {
   onClose: () => void;
 }
 
-export const Videos = ({ color, bgColor }:ButtonProps) => {
+export const Videos = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState<ModalProps | null>(null);
 
@@ -65,11 +60,6 @@ export const Videos = ({ color, bgColor }:ButtonProps) => {
     setSelectedCard(modalProps);
     setIsOpen(true);
   };
-
-  // const openModal = (index : number) => {
-  //   setSelectedCard(currentItems[index]);
-  //   setIsOpen(true);
-  // };
 
   const closeModal = () => {
     setIsOpen(false);
@@ -163,20 +153,20 @@ export const Videos = ({ color, bgColor }:ButtonProps) => {
               <h4>Downloads</h4>
               <Divisor />
               <ModalWrapper>
-                <ModalButton type="button" bgColor="#C2F4EA" color="#00B78F">
-                <ModalIcon bgColor="#9FEFDF" color="#00B78F">
+                <ModalButton type="button" color="#C2F4EA" text="#00B78F">
+                <ModalIcon color="#9FEFDF" text="#00B78F">
                     <FiDownloadCloud size={18} />
                   </ModalIcon>
                   <span>Spreadsheet.xls</span>
                 </ModalButton>
-                <ModalButton type="button" bgColor="#C2E6FF" color="#0073EA">
-                <ModalIcon bgColor="#A1D9FF" color="#0073EA">
+                <ModalButton type="button" color="#C2E6FF" text="#0073EA">
+                <ModalIcon color="#A1D9FF" text="#0073EA">
                   <FiDownloadCloud size={18} />
                 </ModalIcon>
                   <span>Document.doc</span>
                 </ModalButton>
-                <ModalButton type="button" bgColor="#FFF8D0" color="#AE9628">
-                  <ModalIcon bgColor="#FFF1A0" color="#AE9628">
+                <ModalButton type="button" color="#FFF8D0" text="#AE9628">
+                  <ModalIcon color="#FFF1A0" text="#AE9628">
                     <FiDownloadCloud size={18} />
                   </ModalIcon>
                   <span>Presentation.ppt</span>
