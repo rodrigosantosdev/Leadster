@@ -183,15 +183,15 @@ export const ModalWrapper = styled.div`
   gap: 8px;
 `
 
-export const ModalButton = styled.button`
+export const ModalButton = styled.button<{ color: string; text: string }>`
   display: flex;
   align-items: center;
   margin-top: 0.75rem;
-  color: ${props => props.color};
+  color: ${props => props.text};
   border-radius: 4px;
   border: 0;
   cursor: pointer;
-  background-color: ${props => props.bgColor};
+  background-color: ${props => props.color};
 
    span {
     padding: 8px;
@@ -199,13 +199,13 @@ export const ModalButton = styled.button`
    }
 `
 
-export const ModalIcon = styled.div`
+export const ModalIcon = styled.div<{ color: string; text: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px;
-  color: ${props => props.color};
-  background-color: ${props => props.bgColor};
+  color: ${props => props.text};
+  background-color: ${props => props.color};
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 `
