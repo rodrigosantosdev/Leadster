@@ -29,6 +29,8 @@ import { FiDownloadCloud } from 'react-icons/fi'
 interface Item {
   image: string;
   title: string;
+  description: string;
+  link: string;
 }
 
 interface Data {
@@ -40,17 +42,9 @@ interface ButtonProps {
   color: string;
 }
 
-interface ModalProps {
-  title: string;
-  description: string;
-  link: string;
-  isOpen: boolean;
-  onClose: () => void;
-}
-
 export const Videos = ({ color, bgColor }:ButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState<ModalProps | null>(null);
+  const [selectedCard, setSelectedCard] = useState(null);
 
   const openModal = (index: number) => {
     setSelectedCard(currentItems[index]);
