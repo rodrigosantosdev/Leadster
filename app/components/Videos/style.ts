@@ -96,6 +96,30 @@ export const CardItem = styled.div`
 
 export const CardImage = styled.div`
   width: 100%;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+    &::after {
+    content: url('../../../svg/play-solid.svg');
+    display: block;
+    width: 160px;
+    height: 0;
+    position: relative;
+    top: -180px;
+    left: 80px;
+    bottom: 0;
+  }
+
+  &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(72, 178, 251, 0.46);
+      position: absolute;
+    }
+  }
 `
 
 export const CardDesk = styled.div`
@@ -110,4 +134,78 @@ export const CardDesk = styled.div`
   &:hover {
     color: ${colors.blue500};
   }
+`
+
+export const ModalContent = styled.div`
+  
+  h2 {
+    span {
+      color: ${colors.blue500};
+      font-weight: 600;
+    }
+  }
+`
+
+export const ModalTitle = styled.h2`
+  padding: 1.5rem;
+`
+export const ModalVideo = styled.div`
+  iframe {
+    width: 100%;
+    height: 390px;
+    border: 0;
+  }
+`
+export const ModalInfo = styled.div`
+  padding: 1.25rem;
+
+  h3, h4, p {
+    margin-block: 0.75rem;
+    color: ${colors.primary};
+  }
+
+  h3 {
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  h4 {
+    font-weight: 700;
+  }
+`
+
+export const ModalWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+`
+
+export const ModalButton = styled.button`
+  display: flex;
+  align-items: center;
+  margin-top: 0.75rem;
+  color: ${props => props.color};
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  background-color: ${props => props.bgColor};
+
+   span {
+    padding: 8px;
+    font-weight: 600;
+   }
+`
+
+export const ModalIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: ${props => props.color};
+  background-color: ${props => props.bgColor};
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 `

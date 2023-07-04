@@ -14,7 +14,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   totalItems,
   paginate,
 }) => {
-  const [currentPage, setCurrentPage] = useState(3);
+  const [currentPage, setCurrentPage] = useState(1);
   const pageNumbers: number[] = [];
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
