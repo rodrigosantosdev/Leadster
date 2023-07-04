@@ -42,6 +42,7 @@ interface ButtonProps {
 }
 
 interface ModalProps {
+  title: string;
   description: string;
   link: string;
   isOpen: boolean;
@@ -52,10 +53,23 @@ export const Videos = ({ color, bgColor }:ButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState<ModalProps | null>(null);
 
-  const openModal = (index : number) => {
-    setSelectedCard(currentItems[index]);
+  const openModal = (index: number) => {
+    const selectedItem = currentItems[index];
+    const modalProps: ModalProps = {
+      title: selectedItem.title,
+      description: selectedItem.description,
+      link: selectedItem.link,
+      isOpen: true,
+      onClose: closeModal,
+    };
+    setSelectedCard(modalProps);
     setIsOpen(true);
   };
+
+  // const openModal = (index : number) => {
+  //   setSelectedCard(currentItems[index]);
+  //   setIsOpen(true);
+  // };
 
   const closeModal = () => {
     setIsOpen(false);
