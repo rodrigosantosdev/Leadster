@@ -52,7 +52,7 @@ export const Videos = ({ color, bgColor }:ButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState<ModalProps | null>(null);
 
-  const openModal = (index) => {
+  const openModal = (index : number) => {
     setSelectedCard(currentItems[index]);
     setIsOpen(true);
   };
