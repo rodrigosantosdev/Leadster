@@ -23,7 +23,6 @@ import {
 } from "./style";
 import { Modal } from "../Modal";
 import { Pagination } from "../Pagination";
-
 import { FiDownloadCloud } from 'react-icons/fi'
 
 interface Item {
@@ -42,11 +41,18 @@ interface ButtonProps {
   color: string;
 }
 
+interface ModalProps {
+  description: string;
+  link: string;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
 export const Videos = ({ color, bgColor }:ButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedCard, setSelectedCard] = useState<ModalProps | null>(null);
 
-  const openModal = (index: number) => {
+  const openModal = (index) => {
     setSelectedCard(currentItems[index]);
     setIsOpen(true);
   };
