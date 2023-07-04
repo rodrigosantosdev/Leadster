@@ -50,7 +50,7 @@ interface ModalProps {
 
 export const Videos = ({ color, bgColor }:ButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState<ModalProps> | null (null);
+  const [selectedCard, setSelectedCard] = useState<ModalProps | null>(null);
 
   const openModal = (index: number) => {
     setSelectedCard(currentItems[index]);
