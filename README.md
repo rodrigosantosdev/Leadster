@@ -1,6 +1,3 @@
-# Projeto De Teste da Leadster
-É Uma landing page.
-
 **Front-end:** Nextjs, Styled Component.
 
 ## Funcionalidades
